@@ -1,7 +1,13 @@
-import { Fragment, useState } from "react";
+import {Fragment, React} from "react";
+import { useTypewriter, Cursor } from 'react-simple-typewriter'
 
 export default function App() {
-
+  const [text] = useTypewriter({
+    words: ['Seja Bem-vindo!', 'Meu nome é Enrico Mustafa', 'Esse é o meu portifolio'],
+    loop: true,
+    typeSpeed: 120,
+    deleteSpeed: 80,
+  });
   return (
     <Fragment>
 
@@ -15,6 +21,16 @@ export default function App() {
         </nav>
       </header>
 
+      <div className="flex justify-center mt-40">
+      <h1 className="m-12">
+        <span className="font-serif text-5xl">
+          {text}
+        </span>
+        <span className="text-5xl">
+        <Cursor cursorStyle='|'/>
+        </span>
+      </h1>
+      </div>
     </Fragment>
   )
 };
