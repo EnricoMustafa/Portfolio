@@ -1,22 +1,20 @@
 import { Fragment, useState } from "react";
 
 export default function App() {
-  const [name, setname] = useState(false);
 
   return (
     <Fragment>
 
-      <header className="bg-orange-600 flex justify-center">
-        <ul className="w-screen h-10 items-center flex justify-evenly">
-          <li className=" font-bold">Experiencias</li>
-          <li className=" font-bold">Tecnologias</li>
-          <li className=" font-bold">Projetos</li>
-        </ul>
+      <header className="flex items-center justify-around mt-4 bg-transparent">
+        <h1 className="font-serif text-2xl font-semibold">EM</h1>
+
+        <nav className="flex justify-around font-serif text-1xl w-80">
+          <a href="">Sobre</a>
+          <a href="">Tecnologias</a>
+          <a href="">Entre em contato</a>
+        </nav>
       </header>
 
-      <div className=" h-screen flex justify-center items-center">
-        <h1 className="font-bold text-6xl mb-72">Enrico Mustafa|</h1>
-      </div>
     </Fragment>
   )
 };
