@@ -21,7 +21,7 @@ export default function App() {
         </nav>
       </header>
 
-      <div className="flex justify-center mt-40">
+      <div className="flex justify-center h-screen mt-40 ">
       <h1 className="m-12">
         <span className="font-serif text-5xl">
           {text}
@@ -30,6 +30,11 @@ export default function App() {
         <Cursor cursorStyle='|'/>
         </span>
       </h1>
+      </div>
+
+      <div className="flex items-center justify-center">
+        <h1 className="w-40 h-4 font-serif text-5xl">Sobre</h1>
+        <p className="w-48 font-serif text-2xl text-justify h-30">Sou estudante de Sistemas de Informação, com conhecimentos em desenvolvimento web e mobile.</p>
       </div>
     </Fragment>
   )
