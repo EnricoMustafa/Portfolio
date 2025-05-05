@@ -12,30 +12,42 @@ export default function App() {
     <Fragment>
 
       <header className="flex items-center justify-around mt-4 bg-transparent">
-        <h1 className="font-serif text-2xl font-semibold">EM</h1>
+        <h1 className="font-serif text-4xl font-semibold">EM</h1>
 
-        <nav className="flex justify-around font-serif text-1xl w-80">
-          <a href="">Sobre</a>
-          <a href="">Tecnologias</a>
-          <a href="">Entre em contato</a>
+        <nav className="flex font-serif text-lg">
+          <ul className="flex gap-4">
+          <a>Sobre</a>
+          <a>Tecnologias</a>
+          <a>Entre em contato</a>
+
+          </ul>
         </nav>
       </header>
 
-      <div className="flex justify-center h-screen mt-40 ">
-      <h1 className="m-12">
-        <span className="font-serif text-5xl">
+      <section className="flex justify-around bg-red-200 h-svh">
+        <div className="flex items-center">
+
+      <h1 className="flex items-center justify-around h-20 bg-green-200">
+        <span className="font-serif text-5xl ">
           {text}
         </span>
         <span className="text-5xl">
         <Cursor cursorStyle='|'/>
         </span>
       </h1>
-      </div>
+        </div>
+      <p className=""> Sou estudante de Sistemas de Informação, com conhecimentos em desenvolvimento web e mobile.</p>
+      </section>
 
-      <div className="flex items-center justify-center">
-        <h1 className="w-40 h-4 font-serif text-5xl">Sobre</h1>
-        <p className="w-48 font-serif text-2xl text-justify h-30">Sou estudante de Sistemas de Informação, com conhecimentos em desenvolvimento web e mobile.</p>
-      </div>
+      {/* <section class="flex items-center justify-center bg-red-300 h-svh">
+        <div className="bg-white h-80 w-100">
+  <p class="text-center max-w-xl px-4 font-serif text-3xl">
+    Sou estudante de Sistemas de Informação, com conhecimentos em desenvolvimento web e mobile.
+  </p>
+        </div>
+</section> */}
+
+
     </Fragment>
   )
 };
