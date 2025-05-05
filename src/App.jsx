@@ -27,7 +27,7 @@ export default function App() {
       </header>
 
       <section className="flex justify-center h-svh">
-        <div className="flex m-auto gap-60">
+        <div className="flex m-auto">
           <div className="">
             <h1 className="flex items-center h-20  min-w-[800px]">
               <span className="font-serif text-5xl whitespace-nowrap">
@@ -40,9 +40,9 @@ export default function App() {
               desenvolvimento web e mobile.
             </p>
           </div>
-          <div className=" w-96 h-96">
+          <div className="w-96">
           <img
-        src="src/assets/perfil.jpg" // ou uma URL externa
+        src="src/assets/perfil.jpg"
         alt="Foto de perfil"
         className="object-cover border-4 rounded-full shadow-lg w-96 h-96"
       />
