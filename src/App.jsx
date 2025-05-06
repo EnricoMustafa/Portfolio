@@ -104,7 +104,7 @@ export default function App() {
                 />
               </a>
               <a
-              className="p-1 text-white transition-all bg-black rounded-md hover:text-gray-500 p-3 hover:bg-gray-300"
+              className="text-white transition-all bg-black rounded-md hover:text-gray-500 p-3 hover:bg-gray-300"
               href="src/public/docs/ENRICO_MUSTAFA_Curriculo.pdf"
               download="Meu-Curriculo.pdf"
             >
@@ -123,19 +123,23 @@ export default function App() {
         </div>
       </section>
 
+{/* Conseertar o Scroll marquee */}
       <section>
           <h1 className="text-black font-serif text-5xl flex justify-center">Tecnologias</h1>
         <div className="bg-black flex justify-center mt-4 gap-20">
-          <div className="h-96 w-screen flex justify-evenly items-center">
-          <IoLogoJavascript size={70} color="#fff"/>
-          <FaReact size={70} color="#fff" />
-          <FaJava size={70} color="#fff" />
-          <RiTailwindCssFill size={70} color="#fff" />
-          <FaNode size={70} color="#fff" />
-          <FaGitAlt size={70} color="#fff" />
-
-
-
+          <div className=" w-screen p-5 flex justify-evenly ">
+          <div className="w-full">
+      <div className="overflow-hidden whitespace-nowrap bg-black">
+        <div className="flex animate-marquee space-x-10">
+        <IoLogoJavascript size={50} color="#fff"/>
+          <FaReact size={50} color="#fff" />
+          <FaJava size={50} color="#fff" />
+          <RiTailwindCssFill size={50} color="#fff" />
+          <FaNode size={50} color="#fff" />
+          <FaGitAlt size={50} color="#fff" />
+        </div>
+      </div>
+    </div>
 
 
           </div>
