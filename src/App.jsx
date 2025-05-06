@@ -1,5 +1,8 @@
 import { Fragment, React } from "react";
 import { useTypewriter, Cursor } from "react-simple-typewriter";
+import { LiaGithub } from "react-icons/lia";
+import { FaLinkedin } from "react-icons/fa";
+import { IoLogoWhatsapp } from "react-icons/io";
 
 export default function App() {
   const [text] = useTypewriter({
@@ -22,6 +25,7 @@ export default function App() {
             <a>Sobre</a>
             <a>Tecnologias</a>
             <a>Entre em contato</a>
+        <a className="p-1 text-white transition-all bg-black rounded-md hover:text-gray-500 hover:bg-gray-300" href="src/public/docs/ENRICO_MUSTAFA_Curriculo.pdf" download="Meu-Curriculo.pdf">Baixar CV</a>
           </ul>
         </nav>
       </header>
@@ -40,10 +44,28 @@ export default function App() {
         desenvolvimento web e mobile.
       </p>
     
-    <div>
-      <button>Linkedin</button>
-      <button>Github</button>
-      <button>whatsapp</button>
+    <div className="flex items-center justify-center gap-6 mt-10">
+      <a 
+      href="https://www.linkedin.com/in/enricobrasil/"
+      target="_blank"
+      rel="noopener noreferrer"
+      >
+      <FaLinkedin className="transition-all hover:text-gray-300" size={50} />
+      </a>
+      <a 
+      href="https://github.com/EnricoMustafa"
+      target="_blank"
+      rel="noopener noreferrer"
+      >
+      <LiaGithub className="transition-all hover:text-gray-300" size={60} />
+      </a>
+      <a 
+      href="https://wa.me/5571993483883"
+      target="_blank"
+      rel="noopener noreferrer"
+      >
+        <IoLogoWhatsapp className="transition-all hover:text-gray-300" size={50} />
+      </a>
     </div>
     </div>
 
