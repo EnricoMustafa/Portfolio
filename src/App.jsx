@@ -104,7 +104,7 @@ export default function App() {
                 />
               </a>
               <a
-              className="text-white transition-all bg-black rounded-md hover:text-gray-500 p-3 hover:bg-gray-300"
+              className="text-white transition-all font-semibold bg-black rounded-md hover:text-gray-500 p-3 hover:bg-gray-300"
               href="src/public/docs/ENRICO_MUSTAFA_Curriculo.pdf"
               download="Meu-Curriculo.pdf"
             >
@@ -129,14 +129,30 @@ export default function App() {
         <div className="bg-black flex justify-center mt-4 gap-20">
           <div className=" w-screen p-5 flex justify-evenly ">
           <div className="w-full">
-      <div className="overflow-hidden whitespace-nowrap bg-black">
-        <div className="flex animate-marquee space-x-10">
-        <IoLogoJavascript size={50} color="#fff"/>
-          <FaReact size={50} color="#fff" />
-          <FaJava size={50} color="#fff" />
-          <RiTailwindCssFill size={50} color="#fff" />
-          <FaNode size={50} color="#fff" />
-          <FaGitAlt size={50} color="#fff" />
+      <div className="bg-black flex space-x-16 overflow-hidden group">
+        <div className="flex space-x-16 animate-loop-scroll group-hover:paused">
+        <IoLogoJavascript size={50} color="#fff" className="max-w-none"/>
+          <FaReact size={50} color="#fff"className="max-w-none" />
+          <FaJava size={50} color="#fff" className="max-w-none"/>
+          <RiTailwindCssFill size={50} color="#fff" className="max-w-none"/>
+          <FaNode size={50} color="#fff" className="max-w-none"/>
+          <FaGitAlt size={50} color="#fff" className="max-w-none"/>
+        </div>
+        <div className="flex space-x-16 animate-loop-scroll group-hover:paused" aria-hidden="true">
+        <IoLogoJavascript size={50} color="#fff" className="max-w-none"/>
+          <FaReact size={50} color="#fff"className="max-w-none" />
+          <FaJava size={50} color="#fff" className="max-w-none"/>
+          <RiTailwindCssFill size={50} color="#fff" className="max-w-none"/>
+          <FaNode size={50} color="#fff" className="max-w-none"/>
+          <FaGitAlt size={50} color="#fff" className="max-w-none"/>
+        </div>
+        <div className="flex space-x-16 animate-loop-scroll group-hover:paused" aria-hidden="true">
+        <IoLogoJavascript size={50} color="#fff" className="max-w-none"/>
+          <FaReact size={50} color="#fff"className="max-w-none" />
+          <FaJava size={50} color="#fff" className="max-w-none"/>
+          <RiTailwindCssFill size={50} color="#fff" className="max-w-none"/>
+          <FaNode size={50} color="#fff" className="max-w-none"/>
+          <FaGitAlt size={50} color="#fff" className="max-w-none"/>
         </div>
       </div>
     </div>
