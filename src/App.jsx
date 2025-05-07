@@ -1,4 +1,4 @@
-import { Fragment, React } from "react";
+import { Fragment, React, useState } from "react";
 import { useTypewriter, Cursor } from "react-simple-typewriter";
 import { LiaGithub } from "react-icons/lia";
 import { FaLinkedin } from "react-icons/fa";
@@ -9,22 +9,14 @@ import { FaJava } from "react-icons/fa";
 import { RiTailwindCssFill } from "react-icons/ri";
 import { FaNode } from "react-icons/fa";
 import { FaGitAlt } from "react-icons/fa6";
-
-
-
-
-
+import { TbBackground } from "react-icons/tb";
 
 export default function App() {
 
-  const items = [
-          <IoLogoJavascript size={70} color="#fff"/>,
-          <FaReact size={70} color="#fff" />,
-          <FaJava size={70} color="#fff" />,
-          <RiTailwindCssFill size={70} color="#fff" />,
-          <FaNode size={70} color="#fff" />,
-          <FaGitAlt size={70} color="#fff" />
-  ];
+  const [loading, setLoading] = useState(false);
+  const [width, setWidth] = useState('w-0');
+  const [color, setColor ] = useState('bg-red-500');
+  const [transform, setTransform ] = useState('translateX(0)');
 
   const [text] = useTypewriter({
     words: [
@@ -62,9 +54,8 @@ export default function App() {
           {/* Texto */}
           <div className="max-w-xl">
             <h1 className="flex items-center h-20">
-              <span className="font-serif text-5xl whitespace-nowrap"
-              >
-              {text}
+              <span className="font-serif text-5xl whitespace-nowrap">
+                {text}
               </span>
             </h1>
             <p className="mt-4 font-serif text-3xl text-justify">
@@ -104,12 +95,12 @@ export default function App() {
                 />
               </a>
               <a
-              className="p-1 text-white transition-all bg-black rounded-md hover:text-gray-500 p-3 hover:bg-gray-300"
-              href="src/public/docs/ENRICO_MUSTAFA_Curriculo.pdf"
-              download="Meu-Curriculo.pdf"
-            >
-              Baixar CV
-            </a>
+                className="p-1 text-white transition-all bg-black rounded-md hover:text-gray-500 p-3 hover:bg-gray-300"
+                href="src/public/docs/ENRICO_MUSTAFA_Curriculo.pdf"
+                download="Meu-Curriculo.pdf"
+              >
+                Baixar CV
+              </a>
             </div>
           </div>
 
@@ -117,27 +108,68 @@ export default function App() {
             <img
               src="src/assets/perfil.jpg"
               alt="Foto de perfil"
-              className="object-cover rounded-full shadow w-96 h-96"
+              className="object-cover rounded-full animate- shadow w-96 h-96"
             />
           </div>
         </div>
       </section>
 
       <section>
-          <h1 className="text-black font-serif text-5xl flex justify-center">Tecnologias</h1>
-        <div className="bg-black flex justify-center mt-4 gap-20">
-          <div className="h-96 w-screen flex justify-evenly items-center">
-          <IoLogoJavascript size={70} color="#fff"/>
-          <FaReact size={70} color="#fff" />
-          <FaJava size={70} color="#fff" />
-          <RiTailwindCssFill size={70} color="#fff" />
-          <FaNode size={70} color="#fff" />
-          <FaGitAlt size={70} color="#fff" />
-
-
-
-
-
+        <h1 className="text-black font-serif text-5xl flex justify-center">
+          Tecnologias
+        </h1>
+        <div className= "flex w-full justify-center gap-52 mt-4 items-center ">
+          <div className="bg-black p-4 rounded-xl shadow-xl w-96 h-96">
+            <div className="flex justify-center flex-wrap w-80 items-center h-full m-auto gap-4">
+            <IoLogoJavascript 
+            onClick={() => {
+              setColor('bg-yellow-500'),
+              setWidth('w-40')
+            }}
+              size={70}
+              color="#fff"
+              className="hover:animate-pulse cursor-pointer"
+              />
+            <FaReact 
+            onClick={() => {
+              setColor('bg-yellow-500'),
+              setWidth('w-40')
+            }}
+            size={70} color="#fff" className="hover:animate-pulse cursor-pointer" />
+            <FaJava onClick={() => {
+              setColor('bg-green-500'),
+              setWidth('w-24')
+            }}
+            size={70} color="#fff" className="hover:animate-pulse cursor-pointer" />
+            <RiTailwindCssFill onClick={() => {
+              setColor('bg-yellow-500'),
+              setWidth('w-40')
+            }}
+            size={70} color="#fff" className="hover:animate-pulse cursor-pointer" />
+            <FaNode
+            onClick={() => {
+              setColor('bg-red-500'),
+              setWidth('w-24')
+            }} size={70} color="#fff" className="hover:animate-pulse cursor-pointer" />
+            <FaGitAlt onClick={() => {
+              setColor('bg-green-500'),
+              setWidth('w-80')
+            }} 
+            size={70} color="#fff" className="hover:animate-pulse cursor-pointer" />
+            </div>
+          </div>
+          
+            <div className="flex-wrap items-center w-96 ">
+              <div className="bg-slate-300 w-full rounded-2xl">
+                <div className={`${width} h-10 ${color} ${transform} rounded-2xl`}>
+                <p className="text-center font-serif font-semibold p-2">Progresso</p>
+                </div>
+              </div>
+              <div className="text-black flex justify-around w-full font-semibold">
+                <p>Basico</p>
+                <p>Intermediario</p>
+                <p>Avançado</p>
+              </div>
           </div>
         </div>
       </section>
