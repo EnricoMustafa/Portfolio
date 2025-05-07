@@ -9,14 +9,12 @@ import { FaJava } from "react-icons/fa";
 import { RiTailwindCssFill } from "react-icons/ri";
 import { FaNode } from "react-icons/fa";
 import { FaGitAlt } from "react-icons/fa6";
-import { TbBackground } from "react-icons/tb";
 
 export default function App() {
 
-  const [loading, setLoading] = useState(false);
   const [width, setWidth] = useState('w-0');
   const [color, setColor ] = useState('bg-red-500');
-  const [transform, setTransform ] = useState('translateX(0)');
+  const [progress, setProgress ] = useState('w-0');
 
   const [text] = useTypewriter({
     words: [
@@ -30,25 +28,6 @@ export default function App() {
   });
   return (
     <Fragment>
-      {/* <header className="flex items-center justify-around mt-10 bg-transparent">
-        <h1 className="font-serif text-4xl font-semibold">EM</h1>
-
-        <nav className="flex font-serif text-lg">
-          <ul className="flex gap-4">
-            <a>Sobre</a>
-            <a>Tecnologias</a>
-            <a>Entre em contato</a>
-            <a
-              className="p-1 text-white transition-all bg-black rounded-md hover:text-gray-500 hover:bg-gray-300"
-              href="src/public/docs/ENRICO_MUSTAFA_Curriculo.pdf"
-              download="Meu-Curriculo.pdf"
-            >
-              Baixar CV
-            </a>
-          </ul>
-        </nav>
-      </header> */}
-
       <section className="flex items-center h-screen justify-center ">
         <div className="flex items-center gap-40 px-4">
           {/* Texto */}
@@ -95,7 +74,7 @@ export default function App() {
                 />
               </a>
               <a
-                className="p-1 text-white transition-all bg-black rounded-md hover:text-gray-500 p-3 hover:bg-gray-300"
+                className="text-white transition-all bg-black rounded-md hover:text-gray-500 p-3 hover:bg-gray-300"
                 href="src/public/docs/ENRICO_MUSTAFA_Curriculo.pdf"
                 download="Meu-Curriculo.pdf"
               >
@@ -124,36 +103,40 @@ export default function App() {
             <IoLogoJavascript 
             onClick={() => {
               setColor('bg-yellow-500'),
-              setWidth('w-40')
+              setWidth('w-40'),
+              setProgress('w-2/4')
+
             }}
-              size={70}
-              color="#fff"
-              className="hover:animate-pulse cursor-pointer"
-              />
+              size={70} color="#fff" className="hover:animate-pulse cursor-pointer" />
             <FaReact 
             onClick={() => {
               setColor('bg-yellow-500'),
-              setWidth('w-40')
+              setWidth('w-40'),
+              setProgress('w-3/4')
             }}
             size={70} color="#fff" className="hover:animate-pulse cursor-pointer" />
             <FaJava onClick={() => {
               setColor('bg-green-500'),
-              setWidth('w-24')
+              setWidth('w-24'),
+              setProgress('w-full')
             }}
             size={70} color="#fff" className="hover:animate-pulse cursor-pointer" />
             <RiTailwindCssFill onClick={() => {
               setColor('bg-yellow-500'),
-              setWidth('w-40')
+              setWidth('w-40'),
+              setProgress('w-2/4')
             }}
             size={70} color="#fff" className="hover:animate-pulse cursor-pointer" />
             <FaNode
             onClick={() => {
               setColor('bg-red-500'),
-              setWidth('w-24')
+              setWidth('w-24'),
+              setProgress('w-1/4')
             }} size={70} color="#fff" className="hover:animate-pulse cursor-pointer" />
             <FaGitAlt onClick={() => {
               setColor('bg-green-500'),
-              setWidth('w-80')
+              setWidth('w-80'),
+              setProgress('w-full')
             }} 
             size={70} color="#fff" className="hover:animate-pulse cursor-pointer" />
             </div>
@@ -161,7 +144,7 @@ export default function App() {
           
             <div className="flex-wrap items-center w-96 ">
               <div className="bg-slate-300 w-full rounded-2xl">
-                <div className={`${width} h-10 ${color} ${transform} rounded-2xl`}>
+                <div className={`${width} h-10 ${color} ${progress} transition-all duration-700 ease-in-out rounded-2xl`}>
                 <p className="text-center font-serif font-semibold p-2">Progresso</p>
                 </div>
               </div>
