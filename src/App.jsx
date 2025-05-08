@@ -9,6 +9,8 @@ import { FaJava } from "react-icons/fa";
 import { RiTailwindCssFill } from "react-icons/ri";
 import { FaNode } from "react-icons/fa";
 import { FaGitAlt } from "react-icons/fa6";
+import { VscLoading } from "react-icons/vsc";
+
 
 export default function App() {
 
@@ -93,11 +95,11 @@ export default function App() {
         </div>
       </section>
 
-      <section>
+      <section className="h-screen mt-14">
         <h1 className="text-black font-serif text-5xl flex justify-center">
           Tecnologias
         </h1>
-        <div className= "flex w-full justify-center gap-52 mt-4 items-center ">
+        <div className= "flex w-full justify-center gap-52 mt-32 items-center ">
           <div className="bg-black p-4 rounded-xl shadow-xl w-96 h-96">
             <div className="flex justify-center flex-wrap w-80 items-center h-full m-auto gap-4">
             <IoLogoJavascript 
@@ -154,6 +156,55 @@ export default function App() {
                 <p>Avançado</p>
               </div>
           </div>
+        </div>
+      </section>
+
+      <section className="h-screen mt-14">
+      <h1 className="text-black font-serif text-5xl flex justify-center">
+          Projetos
+          <p className="text-sm">
+          (Em breve)
+          </p>
+      </h1>
+        <div className="justify-center flex m-auto h-4/6 items-center mt-6 bg-black">
+      <VscLoading className="animate-spin text-white" size={80}/>
+        </div>
+        <div className="w-full h-full items-center hidden ">
+        <div className="w-4/6 m-auto items-center gap-x-7 gap-y-14 flex justify-around flex-wrap">
+          <div className="w-80 h-92 bg-white shadow-2xl rounded-xl ">
+            <div className="flex justify-center">
+              <img src="src/assets/disco.png" width="250" alt="" />
+            </div>
+            <div>
+              <p className="text-justify p-6">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                Officiis dolorum autem natus architecto corporis nulla vitae eveniet, saepe aspernatur! 
+                Consequatur 
+                soluta dolorem explicabo, quasi consectetur doloribus officia iure veniam omnis.</p>
+            </div>
+          </div>
+          <div className="w-80 h-92 bg-white  shadow-2xl rounded-xl">
+            <div className="flex justify-center">
+              <img src="src/assets/disco.png" width="250" alt="" />
+            </div>
+            <div>
+              <p className="text-justify p-6">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                Officiis dolorum autem natus architecto corporis nulla vitae eveniet, saepe aspernatur! 
+                Consequatur 
+                soluta dolorem explicabo, quasi consectetur doloribus officia iure veniam omnis.</p>
+            </div>
+          </div>
+          <div className="w-80 h-92 bg-white  shadow-2xl rounded-xl">
+            <div className="flex justify-center">
+              <img src="src/assets/disco.png" width="250" alt="" />
+            </div>
+            <div>
+              <p className="text-justify p-6">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                Officiis dolorum autem natus architecto corporis nulla vitae eveniet, saepe aspernatur! 
+                Consequatur 
+                soluta dolorem explicabo, quasi consectetur doloribus officia iure veniam omnis.</p>
+            </div>
+          </div>
+        </div>
         </div>
       </section>
     </Fragment>
