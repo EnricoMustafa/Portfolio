@@ -28,16 +28,16 @@ export default function App() {
   });
   return (
     <Fragment>
-      <section className="flex items-center h-screen justify-center ">
+      <section className="flex items-center h-screen justify-center  bg-color1">
         <div className="flex items-center gap-40 px-4">
           {/* Texto */}
           <div className="max-w-xl">
             <h1 className="flex items-center h-20">
-              <span className="font-serif text-5xl whitespace-nowrap">
+              <span className="font-serif text-5xl text-color3 whitespace-nowrap">
                 {text}
               </span>
             </h1>
-            <p className="mt-4 font-serif text-3xl text-justify">
+            <p className="mt-4 font-serif text-3xl text-color3 text-justify">
               Estudante de Sistemas de Informação, com conhecimentos em
               desenvolvimento web e mobile.
             </p>
@@ -49,7 +49,7 @@ export default function App() {
                 rel="noopener noreferrer"
               >
                 <FaLinkedin
-                  className="transition-all hover:text-gray-300"
+                  className="transition-all text-color3  hover:text-color2"
                   size={50}
                 />
               </a>
@@ -59,7 +59,7 @@ export default function App() {
                 rel="noopener noreferrer"
               >
                 <LiaGithub
-                  className="transition-all hover:text-gray-300"
+                  className="transition-all text-color3 hover:text-color2"
                   size={60}
                 />
               </a>
@@ -69,12 +69,12 @@ export default function App() {
                 rel="noopener noreferrer"
               >
                 <IoLogoWhatsapp
-                  className="transition-all hover:text-gray-300"
+                  className="transition-all text-color3  hover:text-color2  "
                   size={50}
                 />
               </a>
               <a
-                className="text-white transition-all bg-black rounded-md hover:text-gray-500 p-3 hover:bg-gray-300"
+                className="text-white transition-all bg-color3 rounded-md hover:text-color3 p-3 hover:bg-color2"
                 href="src/public/docs/ENRICO_MUSTAFA_Curriculo.pdf"
                 download="Meu-Curriculo.pdf"
               >
@@ -85,9 +85,9 @@ export default function App() {
 
           <div className="w-96">
             <img
-              src="src/assets/perfil.jpg"
+              src="src/assets/perfilSemFundo.png"
               alt="Foto de perfil"
-              className="object-cover rounded-full animate- shadow w-96 h-96"
+              className="object-cover rounded-full animate- shadow w-96 h-96 bg-color2"
             />
           </div>
         </div>
