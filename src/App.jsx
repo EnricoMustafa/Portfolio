@@ -215,7 +215,7 @@ export default function App() {
       </section>
 
       {/* Projetos */}
-      {/* <section className="h-screen mt-14">
+      <section className="h-screen mt-14">
       <h1 className="text-black font-serif text-5xl flex justify-center">
           Projetos
           <p className="text-sm">
@@ -262,7 +262,7 @@ export default function App() {
           </div>
         </div>
         </div>
-      </section> */}
+      </section>
     </Fragment>
   );
 }
