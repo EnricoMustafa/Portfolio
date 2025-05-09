@@ -9,14 +9,57 @@ import { FaJava } from "react-icons/fa";
 import { RiTailwindCssFill } from "react-icons/ri";
 import { FaNode } from "react-icons/fa";
 import { FaGitAlt } from "react-icons/fa6";
-import { VscLoading } from "react-icons/vsc";
-
 
 export default function App() {
 
   const [width, setWidth] = useState('w-0');
   const [color, setColor ] = useState('bg-red-500');
   const [progress, setProgress ] = useState('w-0');
+  const [ textTec, setTextTec ] = useState("Texto de descrição");
+
+  const texto = [
+  <ul>
+    <li>-Declaração de variáveis;</li>
+    <li>-Tipos de dados;</li>
+    <li>-Operadores e estruturas de controle;</li>
+    <li>-Funções;</li>
+    <li>-Escopo e hoisting;</li>
+    <li>-Manipulação de arrays e objetos;</li>
+    <li>-Interação com o DOM;</li>
+    <li>-Eventos;</li>
+  </ul>,
+    <ul>
+    <li>React</li>
+    <li>React</li>
+    <li>React</li>
+    <li>React</li>
+  </ul>,
+    <ul>
+    <li>Java</li>
+    <li>Java</li>
+    <li>Java</li>
+    <li>Java</li>
+  </ul>,
+    <ul>
+    <li>Tailwind</li>
+    <li>Tailwind</li>
+    <li>Tailwind</li>
+    <li>Tailwind</li>
+  </ul>,
+    <ul>
+    <li>Node</li>
+    <li>Node</li>
+    <li>Node</li>
+    <li>Node</li>
+  </ul>,
+    <ul>
+    <li>Git</li>
+    <li>Git</li>
+    <li>Git</li>
+    <li>Git</li>
+  </ul>,
+
+]
 
   const [text] = useTypewriter({
     words: [
@@ -95,71 +138,84 @@ export default function App() {
         </div>
       </section>
 
-      <section className="h-screen mt-14">
-        <h1 className="text-black font-serif text-5xl flex justify-center">
+{/* Tecnologias */}
+      <section className="h-screen">
+        <h1 className="text-black font-serif text-5xl text-center">
           Tecnologias
         </h1>
-        <div className= "flex w-full justify-center gap-52 mt-32 items-center ">
-          <div className="bg-black p-4 rounded-xl shadow-xl w-96 h-96">
-            <div className="flex justify-center flex-wrap w-80 items-center h-full m-auto gap-4">
+        <div className= "flex w-full justify-evenly  mt-6 items-center ">
+          <div className="p-4 rounded-xl shadow-xl w-96 h-96">
+            <h1 className="text-white text-center font-serif font-semibold">Clique em uma linguagem</h1>
+            <div className="flex justify-center flex-wrap w-96 items-center h-full m-auto gap-4">
             <IoLogoJavascript 
             onClick={() => {
               setColor('bg-yellow-500'),
               setWidth('w-40'),
-              setProgress('w-2/4')
+              setProgress('w-2/4'),
+              setTextTec(texto[0])
 
             }}
-              size={70} color="#fff" className="hover:animate-pulse cursor-pointer" />
+              size={70} color="#000" className="hover:animate-pulse cursor-pointer" />
             <FaReact 
             onClick={() => {
               setColor('bg-yellow-500'),
               setWidth('w-40'),
-              setProgress('w-3/4')
+              setProgress('w-3/4'),
+              setTextTec(texto[1])
             }}
-            size={70} color="#fff" className="hover:animate-pulse cursor-pointer" />
+            size={70} color="#000" className="hover:animate-pulse cursor-pointer" />
             <FaJava onClick={() => {
               setColor('bg-green-500'),
               setWidth('w-24'),
-              setProgress('w-full')
+              setProgress('w-full'),
+              setTextTec(texto[2])
             }}
-            size={70} color="#fff" className="hover:animate-pulse cursor-pointer" />
+            size={70} color="#000" className="hover:animate-pulse cursor-pointer" />
             <RiTailwindCssFill onClick={() => {
               setColor('bg-yellow-500'),
               setWidth('w-40'),
-              setProgress('w-2/4')
+              setProgress('w-2/4'),
+              setTextTec(texto[3])
             }}
-            size={70} color="#fff" className="hover:animate-pulse cursor-pointer" />
+            size={70} color="#000" className="hover:animate-pulse cursor-pointer" />
             <FaNode
             onClick={() => {
               setColor('bg-red-500'),
               setWidth('w-24'),
-              setProgress('w-1/4')
-            }} size={70} color="#fff" className="hover:animate-pulse cursor-pointer" />
+              setProgress('w-1/4'),
+              setTextTec(texto[4])
+            }} size={70} color="#000" className="hover:animate-pulse cursor-pointer" />
             <FaGitAlt onClick={() => {
               setColor('bg-green-500'),
               setWidth('w-80'),
-              setProgress('w-full')
+              setProgress('w-full'),
+              setTextTec(texto[5])
             }} 
-            size={70} color="#fff" className="hover:animate-pulse cursor-pointer" />
+            size={70} color="#000" className="hover:animate-pulse cursor-pointer" />
             </div>
           </div>
-          
-            <div className="flex-wrap items-center w-96 ">
-              <div className="bg-slate-300 w-full rounded-2xl">
+
+          <div className="p-4 rounded-xl shadow-xl w-96 h-96">
+            <h1>{textTec}</h1>
+          </div>
+
+          </div>
+            <div className="flex-wrap w-full bg-black m-auto">
+              <div className="bg-white w-96 m-auto rounded-2xl">
                 <div className={`${width} h-10 ${color} ${progress} transition-all duration-700 ease-in-out rounded-2xl`}>
                 <p className="text-center font-serif font-semibold p-2">Progresso</p>
                 </div>
               </div>
-              <div className="text-black flex justify-around w-full font-semibold">
+              <div className="text-white flex justify-around w-96 m-auto font-semibold">
                 <p>Basico</p>
                 <p>Intermediario</p>
                 <p>Avançado</p>
               </div>
           </div>
-        </div>
       </section>
 
-      <section className="h-screen mt-14">
+      {/* Projetos */}
+      {/* <section className="h-screen mt-14">
       <h1 className="text-black font-serif text-5xl flex justify-center">
           Projetos
           <p className="text-sm">
@@ -206,7 +262,7 @@ export default function App() {
           </div>
         </div>
         </div>
-      </section>
+      </section> */}
     </Fragment>
   );
 }
