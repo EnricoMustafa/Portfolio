@@ -9,6 +9,12 @@ import { FaJava } from "react-icons/fa";
 import { RiTailwindCssFill } from "react-icons/ri";
 import { FaNode } from "react-icons/fa";
 import { FaGitAlt } from "react-icons/fa6";
+import { VscLoading } from "react-icons/vsc";
+import { FaPython } from "react-icons/fa";
+import { FaCss3Alt } from "react-icons/fa";
+import { FaHtml5 } from "react-icons/fa";
+import { GrMysql } from "react-icons/gr";
+
 
 export default function App() {
 
@@ -16,6 +22,7 @@ export default function App() {
   const [color, setColor ] = useState('bg-red-500');
   const [progress, setProgress ] = useState('w-0');
   const [ textTec, setTextTec ] = useState("Texto de descrição");
+  const [ animacao, setAnimacao] = useState('animate-none');
 
   const texto = [
   <ul>
@@ -128,11 +135,11 @@ export default function App() {
             </div>
           </div>
 
-          <div className="w-96">
+          <div className="w-96 ">
             <img
               src="src/assets/perfil.jpg"
               alt="Foto de perfil"
-              className="object-cover rounded-full animate- shadow w-96 h-96"
+              className="object-cover rounded-full w-96 h-96"
             />
           </div>
         </div>
@@ -140,19 +147,20 @@ export default function App() {
 
 {/* Tecnologias */}
       <section className="h-screen">
-        <h1 className="text-black font-serif text-5xl text-center">
+        <h1 className="text-black font-serif pt-12 text-5xl text-center">
           Tecnologias
         </h1>
-        <div className= "flex w-full justify-evenly  mt-6 items-center ">
-          <div className="p-4 rounded-xl shadow-xl w-96 h-96">
-            <h1 className="text-white text-center font-serif font-semibold">Clique em uma linguagem</h1>
-            <div className="flex justify-center flex-wrap w-96 items-center h-full m-auto gap-4">
+        <div className= "flex w-full h-3/5 items-center justify-center gap-32">
+          <div className="p-4 rounded-xl shadow-xl w-2/5 border border-gray-400 h-96">
+            <h1 className="text-black text-center font-serif text-2xl">Clique em uma linguagem e veja meu nivel de experiencia</h1>
+            <div className="flex justify-center flex-wrap w-full items-center h-3/4 m-auto gap-4">
             <IoLogoJavascript 
             onClick={() => {
               setColor('bg-yellow-500'),
               setWidth('w-40'),
               setProgress('w-2/4'),
-              setTextTec(texto[0])
+              setTextTec(texto[0]),
+              setAnimacao('animate-bounce')
 
             }}
               size={70} color="#000" className="hover:animate-pulse cursor-pointer" />
@@ -192,21 +200,50 @@ export default function App() {
               setTextTec(texto[5])
             }} 
             size={70} color="#000" className="hover:animate-pulse cursor-pointer" />
+            <FaPython onClick={() => {
+              setColor('bg-green-500'),
+              setWidth('w-80'),
+              setProgress('w-full'),
+              setTextTec(texto[5])
+            }}
+            size={70} color="#000" className="hover:animate-pulse cursor-pointer" /> 
+            <FaCss3Alt onClick={() => {
+              setColor('bg-green-500'),
+              setWidth('w-80'),
+              setProgress('w-full'),
+              setTextTec(texto[5])
+            }}
+            size={70} color="#000" className="hover:animate-pulse cursor-pointer" /> 
+            <FaHtml5  onClick={() => {
+              setColor('bg-green-500'),
+              setWidth('w-80'),
+              setProgress('w-full'),
+              setTextTec(texto[5])
+            }}
+            size={70} color="#000" className="hover:animate-pulse cursor-pointer" /> 
+            <GrMysql onClick={() => {
+              setColor('bg-green-500'),
+              setWidth('w-80'),
+              setProgress('w-20'),
+              setTextTec(texto[5])
+            }} 
+            size={70} color="#000" className="hover:animate-pulse cursor-pointer" />
+
             </div>
           </div>
 
-          <div className="p-4 rounded-xl shadow-xl w-96 h-96">
+          <div className="p-4 rounded-xl shadow-xl w-96 h-96 border border-gray-400">
             <h1>{textTec}</h1>
           </div>
 
           </div>
-            <div className="flex-wrap w-full bg-black m-auto">
-              <div className="bg-white w-96 m-auto rounded-2xl">
+            <div className="flex-wrap w-full m-auto">
+              <div className="bg-white w-96 m-auto shadow-xl rounded-2xl">
                 <div className={`${width} h-10 ${color} ${progress} transition-all duration-700 ease-in-out rounded-2xl`}>
                 <p className="text-center font-serif font-semibold p-2">Progresso</p>
                 </div>
               </div>
-              <div className="text-white flex justify-around w-96 m-auto font-semibold">
+              <div className="text-black flex justify-around w-96 m-auto font-semibold">
                 <p>Basico</p>
                 <p>Intermediario</p>
                 <p>Avançado</p>
