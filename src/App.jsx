@@ -18,7 +18,6 @@ import { GrMysql } from "react-icons/gr";
 
 export default function App() {
 
-  const [width, setWidth] = useState('w-0');
   const [color, setColor ] = useState('bg-red-500');
   const [progress, setProgress ] = useState('w-0');
   const [ textTec, setTextTec ] = useState("Texto de descrição");
@@ -157,31 +156,25 @@ export default function App() {
             <IoLogoJavascript 
             onClick={() => {
               setColor('bg-yellow-500'),
-              setWidth('w-40'),
               setProgress('w-2/4'),
-              setTextTec(texto[0]),
-              setAnimacao('animate-bounce')
-
+              setTextTec(texto[0])
             }}
               size={70} color="#000" className="hover:animate-pulse cursor-pointer" />
             <FaReact 
             onClick={() => {
               setColor('bg-yellow-500'),
-              setWidth('w-40'),
-              setProgress('w-3/4'),
+              setProgress('w-1/2'),
               setTextTec(texto[1])
             }}
             size={70} color="#000" className="hover:animate-pulse cursor-pointer" />
             <FaJava onClick={() => {
-              setColor('bg-green-500'),
-              setWidth('w-24'),
-              setProgress('w-full'),
+              setColor('bg-red-500'),
+              setProgress('w-1/4'),
               setTextTec(texto[2])
             }}
             size={70} color="#000" className="hover:animate-pulse cursor-pointer" />
             <RiTailwindCssFill onClick={() => {
               setColor('bg-yellow-500'),
-              setWidth('w-40'),
               setProgress('w-2/4'),
               setTextTec(texto[3])
             }}
@@ -189,42 +182,36 @@ export default function App() {
             <FaNode
             onClick={() => {
               setColor('bg-red-500'),
-              setWidth('w-24'),
               setProgress('w-1/4'),
               setTextTec(texto[4])
             }} size={70} color="#000" className="hover:animate-pulse cursor-pointer" />
             <FaGitAlt onClick={() => {
-              setColor('bg-green-500'),
-              setWidth('w-80'),
-              setProgress('w-full'),
+              setColor('bg-yellow-500'),
+              setProgress('w-1/2'),
               setTextTec(texto[5])
             }} 
             size={70} color="#000" className="hover:animate-pulse cursor-pointer" />
             <FaPython onClick={() => {
-              setColor('bg-green-500'),
-              setWidth('w-80'),
-              setProgress('w-full'),
+              setColor('bg-yellow-500'),
+              setProgress('w-1/4'),
               setTextTec(texto[5])
             }}
             size={70} color="#000" className="hover:animate-pulse cursor-pointer" /> 
             <FaCss3Alt onClick={() => {
-              setColor('bg-green-500'),
-              setWidth('w-80'),
-              setProgress('w-full'),
+              setColor('bg-yellow-500'),
+              setProgress('w-2/3'),
               setTextTec(texto[5])
             }}
             size={70} color="#000" className="hover:animate-pulse cursor-pointer" /> 
             <FaHtml5  onClick={() => {
               setColor('bg-green-500'),
-              setWidth('w-80'),
-              setProgress('w-full'),
+              setProgress('w-3/4'),
               setTextTec(texto[5])
             }}
             size={70} color="#000" className="hover:animate-pulse cursor-pointer" /> 
             <GrMysql onClick={() => {
-              setColor('bg-green-500'),
-              setWidth('w-80'),
-              setProgress('w-20'),
+              setColor('bg-red-500'),
+              setProgress('w-1/4'),
               setTextTec(texto[5])
             }} 
             size={70} color="#000" className="hover:animate-pulse cursor-pointer" />
@@ -238,8 +225,8 @@ export default function App() {
 
           </div>
             <div className="flex-wrap w-full m-auto">
-              <div className="bg-white w-96 m-auto shadow-xl rounded-2xl">
-                <div className={`${width} h-10 ${color} ${progress} transition-all duration-700 ease-in-out rounded-2xl`}>
+              <div className="bg-white w-96 m-auto shadow-xl rounded-2xl border border-black">
+                <div className={`h-10 ${color} ${progress} transition-all duration-700 ease-in-out  rounded-2xl`}>
                 <p className="text-center font-serif font-semibold p-2">Progresso</p>
                 </div>
               </div>
