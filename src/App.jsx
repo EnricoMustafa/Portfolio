@@ -18,11 +18,10 @@ import { GrMysql } from "react-icons/gr";
 
 export default function App() {
 
-  const [color, setColor ] = useState('bg-red-500');
-  const [progress, setProgress ] = useState('w-0');
-  const [ textTec, setTextTec ] = useState("Texto de descrição");
-  const [ titleTec, settitleTec] = useState('');
-
+  const semTela = (e) => {
+    e.preventDefault;
+    alert("ESSE PROJETO ESTÀ EM CONSTRUÇÂO, CLIQUE EM 'OK' PARA RECARREGAR A PAGINA");
+  }
   const texto = [
   <ul>
     <li>-Declaração de variáveis;</li>
@@ -106,6 +105,13 @@ export default function App() {
   </ul>,
 
 ]
+
+  const [color, setColor ] = useState('bg-red-500');
+  const [progress, setProgress ] = useState('w-0');
+  const [ textTec, setTextTec ] = useState(texto[0]);
+  const [ titleTec, settitleTec] = useState('Javascript');
+
+
 
   const [text] = useTypewriter({
     words: [
@@ -294,30 +300,42 @@ export default function App() {
       <section className="h-screen w-full ">
       <h1 className="text-black pt-12 font-serif text-5xl flex justify-center">
           Projetos
-          <p className="text-sm">
-          (Em breve)
-          </p>
       </h1>
        <div className= "flex h-3/5 items-center mt-4 w-full justify-center gap-3">
           <div className="p-8 rounded-xl shadow-xl w-3/4 border border-gray-400 items-center flex justify-around h-5/6">
           <div>
             <h1 className="text-center font-semibold text-2xl">Verificador de senha</h1>
-          <div className="w-72 h-52 bg-black rounded-t-xl mt-2 border border-gray-400">
+          <div className="w-96 h-52 bg-black rounded-t-xl mt-2 border border-gray-400">
             <img src="src/assets/VerificadorSenha.jpg" className="object-cover rounded-t-xl w-full h-full " alt="Verificador de senha"/>
           </div>
-          <div className="bg-black rounded-b-xl">
-            <h1 className="text-white text-center font-semibold p-1">Verificador de senha</h1>
+          <div className="bg-black rounded-b-xl p-3 justify-center gap-6 flex">
+            <IoLogoJavascript
+            color="white"
+            size={25}  
+            className=""
+            />
+
+            <FaReact
+            color="white"
+            size={25}  
+            className=""/>
+
+            <RiTailwindCssFill
+            color="white"
+            size={25}  
+            className=""/>
+
           </div>
           <div className="flex justify-around mt-3">
-            <button className="bg-black text-white p-1 rounded-lg hover:animate-pulse hover:bg-gray-400 font-semibold "> <a target="_blank" href="https://enricomustafa.github.io/VerificadorDeSenha/">Acessar</a></button>
-            <button className="bg-black text-white p-1 rounded-lg hover:animate-pulse hover:bg-gray-400 font-semibold"> <a target="_blank" href="https://github.com/EnricoMustafa/VerificadorDeSenha">Github</a></button>
+            <button className="bg-black text-white p-2 w-20 rounded-lg hover:animate-pulse hover:bg-gray-400 font-semibold "> <a target="_blank" href="https://enricomustafa.github.io/VerificadorDeSenha/">Acessar</a></button>
+            <button className="bg-black text-white p-2 w-20 rounded-lg hover:animate-pulse hover:bg-gray-400 font-semibold"> <a target="_blank" href="https://github.com/EnricoMustafa/VerificadorDeSenha">Github</a></button>
           </div>
           </div>
 
           {/* Projeto a colocar */}
           <div>
             <h1 className="text-center font-semibold text-2xl">Em breve</h1>
-          <div className="w-72 h-52 bg-black rounded-t-xl mt-2 border border-gray-400">
+          <div className="w-96 h-52 bg-black rounded-t-xl mt-2 border border-gray-400">
             <VscLoading color="white" size={50} className="m-auto flex justify-center  mt-20 animate-spin"/>
             <img src="src/assets/VerificadorSenha.jpg" className="object-cover rounded-t-xl hidden w-full h-full " alt="Verificador de senha"/>
           </div>
@@ -325,11 +343,10 @@ export default function App() {
             <h1 className="text-white text-center font-semibold p-1">Em Processo</h1>
           </div>
           <div className="flex justify-around mt-3">
-            <button className="bg-black text-white p-1 rounded-lg hover:animate-pulse hover:bg-gray-400 font-semibold "> <a href="" onClick={() => {semTela()}}>Acessar</a></button>
-            <button className="bg-black text-white p-1 rounded-lg hover:animate-pulse hover:bg-gray-400 font-semibold"> <a target="_blank" href="https://github.com/EnricoMustafa/VerificadorDeSenha">Github</a></button>
+            <button className="bg-black text-white p-2 w-20 rounded-lg hover:animate-pulse hover:bg-gray-400 font-semibold "> <a href="" onClick={(e) => {semTela(e)}}>Acessar</a></button>
+            <button className="bg-black text-white p-2 w-20 rounded-lg hover:animate-pulse hover:bg-gray-400 font-semibold"> <a target="_blank" href="https://github.com/EnricoMustafa/VerificadorDeSenha">Github</a></button>
           </div>
           </div>
-
           </div>
        </div>
       </section>
