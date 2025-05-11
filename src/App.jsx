@@ -21,7 +21,7 @@ export default function App() {
   const [color, setColor ] = useState('bg-red-500');
   const [progress, setProgress ] = useState('w-0');
   const [ textTec, setTextTec ] = useState("Texto de descrição");
-  const [ animacao, setAnimacao] = useState('animate-none');
+  const [ titleTec, settitleTec] = useState('');
 
   const texto = [
   <ul>
@@ -35,34 +35,74 @@ export default function App() {
     <li>-Eventos;</li>
   </ul>,
     <ul>
-    <li>React</li>
-    <li>React</li>
-    <li>React</li>
-    <li>React</li>
+    <li>-JSX e renderização de componentes;</li>
+    <li>-Componentes funcionais e de classe;</li>
+    <li>-Ciclo de vida dos componentes;</li>
+    <li>-Hooks (useState, useEffect, etc.);</li>
   </ul>,
     <ul>
-    <li>Java</li>
-    <li>Java</li>
-    <li>Java</li>
-    <li>Java</li>
+    <li>-Tipos primitivos e variáveis;</li>
+    <li>-Operadores e controle de fluxo;</li>
+    <li>-Classes, objetos e métodos;</li>
+    <li>-Herança;</li>
+    <li>-Polimorfismo;</li>
+    <li>-Encapsulamento;</li>
+    <li>-Interfaces e classes abstratas;</li>
+    <li>-Tratamento de exceções;</li>
   </ul>,
     <ul>
-    <li>Tailwind</li>
-    <li>Tailwind</li>
-    <li>Tailwind</li>
-    <li>Tailwind</li>
+    <li>-Sistema de utilitários;</li>
+    <li>-Responsividade;</li>
+    <li>-Pseudo-classes;</li>
+    <li>-Grid e Flexbox com Tailwind;</li>
+    <li>-Customização com tailwind.config.js;</li>
+    <li>-Animações e transições;</li>
   </ul>,
     <ul>
-    <li>Node</li>
-    <li>Node</li>
-    <li>Node</li>
-    <li>Node</li>
+    <li>-Módulos (require, import, exports);</li>
+    <li>-npm e package.json;</li>
+    <li>-Sistema de arquivos (fs);</li>
+    <li>-Eventos e EventEmitter;</li>
+    <li>-Servidor com http ou express;</li>
   </ul>,
     <ul>
-    <li>Git</li>
-    <li>Git</li>
-    <li>Git</li>
-    <li>Git</li>
+    <li>-git init, clone, add, commit, push, pull;</li>
+    <li>-Branches e merge;</li>
+    <li>-Resolução de conflitos;</li>
+    <li>-GitHub: clone, fork, pull request;</li>
+    <li>-.gitignore;</li>
+    <li>-Histórico de commits;</li>
+    <li>-Revert e reset;</li>
+  </ul>,
+    <ul>
+    <li>-Sintaxe básica e identação;</li>
+    <li>-Tipos de dados e variáveis;</li>
+    <li>-Controle de fluxo (if, for, while);</li>
+    <li>-Funções e lambda;</li>
+    <li>-Listas, dicionários, tuplas, sets;</li>
+  </ul>,
+    <ul>
+    <li>-Seletores e especificidade;</li>
+    <li>-Box model;</li>
+    <li>-Flexbox e Grid;</li>
+    <li>-Pseudo-classes e pseudo-elementos;</li>
+    <li>-Animações e transições;</li>
+    <li>-Media queries;</li>
+    <li>-Positioning (relative, absolute, etc.);</li>
+    <li>-Custom properties (variáveis CSS);</li>  
+  </ul>,
+    <ul>
+    <li>-Tags semânticas;</li>
+    <li>-Formulários e inputs;</li>
+    <li>-Tabelas e listas;</li>
+    <li>-Atributos globais (id, class);</li>
+    <li>-Links e navegação;</li>
+  </ul>,
+    <ul>
+    <li>-Criação de banco e tabelas;</li>
+    <li>-Tipos de dados;</li>
+    <li>-SELECT, INSERT, UPDATE, DELETE;</li>
+    <li>-JOIN;</li>
   </ul>,
 
 ]
@@ -149,85 +189,97 @@ export default function App() {
         <h1 className="text-black font-serif pt-12 text-5xl text-center">
           Tecnologias
         </h1>
-        <div className= "flex w-full h-3/5 items-center justify-center gap-32">
+        <div className= "flex w-full h-3/5 items-center justify-center gap-3">
           <div className="p-4 rounded-xl shadow-xl w-2/5 border border-gray-400 h-96">
-            <h1 className="text-black text-center font-serif text-2xl">Clique em uma linguagem e veja meu nivel de experiencia</h1>
-            <div className="flex justify-center flex-wrap w-full items-center h-3/4 m-auto gap-4">
+            <h1 className="text-center text-2xl font-bold mt-2">Clique em uma linguagem e veja meu nivel de experiencia</h1>
+            <div className="flex justify-center flex-wrap mt-4 w-full items-center h-3/4 gap-4">
             <IoLogoJavascript 
             onClick={() => {
               setColor('bg-yellow-500'),
               setProgress('w-2/4'),
-              setTextTec(texto[0])
+              setTextTec(texto[0]),
+              settitleTec('Javascript');
             }}
-              size={70} color="#000" className="hover:animate-pulse cursor-pointer" />
+              size={70} color="#000" className="hover:animate-pulse cursor-pointer transition-transform duration-600 hover:scale-110" />
             <FaReact 
             onClick={() => {
               setColor('bg-yellow-500'),
               setProgress('w-1/2'),
-              setTextTec(texto[1])
+              setTextTec(texto[1]),
+              settitleTec('React');
             }}
-            size={70} color="#000" className="hover:animate-pulse cursor-pointer" />
+            size={70} color="#000" className="hover:animate-pulse cursor-pointer transition-transform duration-600 hover:scale-110" />
             <FaJava onClick={() => {
               setColor('bg-red-500'),
               setProgress('w-1/4'),
-              setTextTec(texto[2])
+              setTextTec(texto[2]),
+              settitleTec('Java');
             }}
-            size={70} color="#000" className="hover:animate-pulse cursor-pointer" />
+            size={70} color="#000" className="hover:animate-pulse cursor-pointer transition-transform duration-600 hover:scale-110" />
             <RiTailwindCssFill onClick={() => {
               setColor('bg-yellow-500'),
               setProgress('w-2/4'),
-              setTextTec(texto[3])
+              setTextTec(texto[3]),
+              settitleTec('Tailwind');
             }}
-            size={70} color="#000" className="hover:animate-pulse cursor-pointer" />
+            size={70} color="#000" className="hover:animate-pulse cursor-pointer transition-transform duration-600 hover:scale-110" />
             <FaNode
             onClick={() => {
               setColor('bg-red-500'),
               setProgress('w-1/4'),
-              setTextTec(texto[4])
-            }} size={70} color="#000" className="hover:animate-pulse cursor-pointer" />
+              setTextTec(texto[4]),
+              settitleTec('Node');
+            }} 
+            size={70} color="#000" className="hover:animate-pulse cursor-pointer transition-transform duration-600 hover:scale-110" />
             <FaGitAlt onClick={() => {
               setColor('bg-yellow-500'),
               setProgress('w-1/2'),
-              setTextTec(texto[5])
+              setTextTec(texto[5]),
+              settitleTec('Git');
             }} 
-            size={70} color="#000" className="hover:animate-pulse cursor-pointer" />
+            size={70} color="#000" className="hover:animate-pulse cursor-pointer transition-transform duration-600 hover:scale-110" />
             <FaPython onClick={() => {
-              setColor('bg-yellow-500'),
+              setColor('bg-red-500'),
               setProgress('w-1/4'),
-              setTextTec(texto[5])
+              setTextTec(texto[6]),
+              settitleTec('Python');
             }}
-            size={70} color="#000" className="hover:animate-pulse cursor-pointer" /> 
+            size={70} color="#000" className="hover:animate-pulse cursor-pointer transition-transform duration-600 hover:scale-110" /> 
             <FaCss3Alt onClick={() => {
               setColor('bg-yellow-500'),
               setProgress('w-2/3'),
-              setTextTec(texto[5])
+              setTextTec(texto[7]),
+              settitleTec('CSS');
             }}
-            size={70} color="#000" className="hover:animate-pulse cursor-pointer" /> 
+            size={70} color="#000" className="hover:animate-pulse cursor-pointer transition-transform duration-600 hover:scale-110" /> 
             <FaHtml5  onClick={() => {
               setColor('bg-green-500'),
               setProgress('w-3/4'),
-              setTextTec(texto[5])
+              setTextTec(texto[8]),
+              settitleTec('HTML');
             }}
-            size={70} color="#000" className="hover:animate-pulse cursor-pointer" /> 
+            size={70} color="#000" className="hover:animate-pulse cursor-pointer transition-transform duration-600 hover:scale-110" /> 
             <GrMysql onClick={() => {
               setColor('bg-red-500'),
               setProgress('w-1/4'),
-              setTextTec(texto[5])
+              setTextTec(texto[9]),
+              settitleTec('MySql');
             }} 
-            size={70} color="#000" className="hover:animate-pulse cursor-pointer" />
+            size={70} color="#000" className="hover:animate-pulse cursor-pointer transition-transform duration-600 hover:scale-110" />
 
             </div>
           </div>
 
-          <div className="p-4 rounded-xl shadow-xl w-96 h-96 border border-gray-400">
-            <h1>{textTec}</h1>
+          <div className="p-4 rounded-xl shadow-xl w-96 h-96 text-xl border border-gray-400">
+            <h1 className="text-center text-2xl font-bold">{titleTec}</h1>
+            <h1 className="mt-4">{textTec}</h1>
           </div>
 
           </div>
             <div className="flex-wrap w-full m-auto">
-              <div className="bg-white w-96 m-auto shadow-xl rounded-2xl border border-black">
+              <div className="bg-white w-96 m-auto shadow-xl rounded-2xl border border-gray-400">
                 <div className={`h-10 ${color} ${progress} transition-all duration-700 ease-in-out  rounded-2xl`}>
-                <p className="text-center font-serif font-semibold p-2">Progresso</p>
+                <p className="text-center font-serif font-semibold p-2">Nivel</p>
                 </div>
               </div>
               <div className="text-black flex justify-around w-96 m-auto font-semibold">
@@ -239,53 +291,47 @@ export default function App() {
       </section>
 
       {/* Projetos */}
-      <section className="h-screen mt-14">
-      <h1 className="text-black font-serif text-5xl flex justify-center">
+      <section className="h-screen w-full ">
+      <h1 className="text-black pt-12 font-serif text-5xl flex justify-center">
           Projetos
           <p className="text-sm">
           (Em breve)
           </p>
       </h1>
-        <div className="justify-center flex m-auto h-4/6 items-center mt-6 bg-black">
-      <VscLoading className="animate-spin text-white" size={80}/>
-        </div>
-        <div className="w-full h-full items-center hidden ">
-        <div className="w-4/6 m-auto items-center gap-x-7 gap-y-14 flex justify-around flex-wrap">
-          <div className="w-80 h-92 bg-white shadow-2xl rounded-xl ">
-            <div className="flex justify-center">
-              <img src="src/assets/disco.png" width="250" alt="" />
-            </div>
-            <div>
-              <p className="text-justify p-6">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                Officiis dolorum autem natus architecto corporis nulla vitae eveniet, saepe aspernatur! 
-                Consequatur 
-                soluta dolorem explicabo, quasi consectetur doloribus officia iure veniam omnis.</p>
-            </div>
+       <div className= "flex h-3/5 items-center mt-4 w-full justify-center gap-3">
+          <div className="p-8 rounded-xl shadow-xl w-3/4 border border-gray-400 items-center flex justify-around h-5/6">
+          <div>
+            <h1 className="text-center font-semibold text-2xl">Verificador de senha</h1>
+          <div className="w-72 h-52 bg-black rounded-t-xl mt-2 border border-gray-400">
+            <img src="src/assets/VerificadorSenha.jpg" className="object-cover rounded-t-xl w-full h-full " alt="Verificador de senha"/>
           </div>
-          <div className="w-80 h-92 bg-white  shadow-2xl rounded-xl">
-            <div className="flex justify-center">
-              <img src="src/assets/disco.png" width="250" alt="" />
-            </div>
-            <div>
-              <p className="text-justify p-6">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                Officiis dolorum autem natus architecto corporis nulla vitae eveniet, saepe aspernatur! 
-                Consequatur 
-                soluta dolorem explicabo, quasi consectetur doloribus officia iure veniam omnis.</p>
-            </div>
+          <div className="bg-black rounded-b-xl">
+            <h1 className="text-white text-center font-semibold p-1">Verificador de senha</h1>
           </div>
-          <div className="w-80 h-92 bg-white  shadow-2xl rounded-xl">
-            <div className="flex justify-center">
-              <img src="src/assets/disco.png" width="250" alt="" />
-            </div>
-            <div>
-              <p className="text-justify p-6">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                Officiis dolorum autem natus architecto corporis nulla vitae eveniet, saepe aspernatur! 
-                Consequatur 
-                soluta dolorem explicabo, quasi consectetur doloribus officia iure veniam omnis.</p>
-            </div>
+          <div className="flex justify-around mt-3">
+            <button className="bg-black text-white p-1 rounded-lg hover:animate-pulse hover:bg-gray-400 font-semibold "> <a target="_blank" href="https://enricomustafa.github.io/VerificadorDeSenha/">Acessar</a></button>
+            <button className="bg-black text-white p-1 rounded-lg hover:animate-pulse hover:bg-gray-400 font-semibold"> <a target="_blank" href="https://github.com/EnricoMustafa/VerificadorDeSenha">Github</a></button>
           </div>
-        </div>
-        </div>
+          </div>
+
+          {/* Projeto a colocar */}
+          <div>
+            <h1 className="text-center font-semibold text-2xl">Em breve</h1>
+          <div className="w-72 h-52 bg-black rounded-t-xl mt-2 border border-gray-400">
+            <VscLoading color="white" size={50} className="m-auto flex justify-center  mt-20 animate-spin"/>
+            <img src="src/assets/VerificadorSenha.jpg" className="object-cover rounded-t-xl hidden w-full h-full " alt="Verificador de senha"/>
+          </div>
+          <div className="bg-black rounded-b-xl ">
+            <h1 className="text-white text-center font-semibold p-1">Em Processo</h1>
+          </div>
+          <div className="flex justify-around mt-3">
+            <button className="bg-black text-white p-1 rounded-lg hover:animate-pulse hover:bg-gray-400 font-semibold "> <a href="" onClick={() => {semTela()}}>Acessar</a></button>
+            <button className="bg-black text-white p-1 rounded-lg hover:animate-pulse hover:bg-gray-400 font-semibold"> <a target="_blank" href="https://github.com/EnricoMustafa/VerificadorDeSenha">Github</a></button>
+          </div>
+          </div>
+
+          </div>
+       </div>
       </section>
     </Fragment>
   );
