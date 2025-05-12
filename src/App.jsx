@@ -1,4 +1,4 @@
-import { Fragment, React, useState } from "react";
+import { Fragment, React, useEffect, useState } from "react";
 import { useTypewriter, Cursor } from "react-simple-typewriter";
 import { LiaGithub } from "react-icons/lia";
 import { FaLinkedin } from "react-icons/fa";
@@ -24,7 +24,7 @@ export default function App() {
     alert("ESSE PROJETO ESTÀ EM CONSTRUÇÂO, CLIQUE EM 'OK' PARA RECARREGAR A PAGINA");
   }
 
-  const sendEmail = (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
 
     if(name === '' || email === '' || message === ''){
@@ -41,9 +41,10 @@ export default function App() {
     .then((response) => {
       console.log("EMAIL ENVIADO", response.status, response.text)
       console.log(templateParams)
+      setSuccessMessage(true);
       setName('')
       setEmail('')
-      setEmail('')
+      setMessage('')
     }, (err) => {
       console.log("Error:", err)
     })
@@ -140,7 +141,16 @@ export default function App() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
+  const [successMessage, setSuccessMessage] = useState(false);
 
+  useEffect(() => {
+    if(successMessage) {
+      const timer = setTimeout(() => {
+        setSuccessMessage(false);
+      }, 5000);
+      return () => clearTimeout(timer);
+    }
+  }, [successMessage])
 
 
   const [text] = useTypewriter({
@@ -326,7 +336,6 @@ export default function App() {
           </div>
       </section>
 
-      {/* Projetos */}
       <section className="h-screen w-full ">
       <h1 className="text-black pt-12 font-serif text-5xl flex justify-center">
           Projetos
@@ -362,7 +371,6 @@ export default function App() {
           </div>
           </div>
 
-          {/* Projeto a colocar */}
           <div>
             <h1 className="text-center font-semibold text-2xl">Em breve</h1>
           <div className="w-96 h-52 bg-black rounded-t-xl mt-2 border border-gray-400">
@@ -387,14 +395,14 @@ export default function App() {
       <h1 className="text-black  font-serif text-5xl flex justify-center">
           Contato
       </h1>
-      <form className="flex items-center justify-center flex-col gap-3 mt-5" onSubmit={sendEmail}>
-            <input className="border rounded-md w-2/4 p-1" type="text" placeholder="Digite seu nome" onChange={(e) => {setName(e.target.value)}} value={name}/>
-            <input className="border rounded-md w-2/4 p-1" type="text" placeholder="Digite seu email" onChange={(e) => {setEmail(e.target.value)}} value={email}/>
-            <textarea className="border rounded-md w-2/4" type="text" placeholder="Digite sua mensagem..." onChange={(e) => {setMessage(e.target.value)}} value={message}/>
-            <input type="submit" className="bg-black rounded-xl text-white w-1/4 p-3"/ >
+      <form className="flex items-center justify-center  flex-col gap-3 mt-5" onSubmit={handleSubmit}>
+            <input className="border rounded-xl w-2/4 p-2" type="text" placeholder="Digite seu nome" onChange={(e) => {setName(e.target.value)}} value={name}/>
+            <input className="border rounded-xl w-2/4 p-2" type="text" placeholder="Digite seu email" onChange={(e) => {setEmail(e.target.value)}} value={email}/>
+            <textarea className="border rounded-xl w-2/4 p-2 " type="text" placeholder="Digite sua mensagem..." onChange={(e) => {setMessage(e.target.value)}} value={message}/>
+            <input type="submit" className="bg-black rounded-lg cursor-pointer mt-2 hover:bg-white hover:text-black border text-white w-1/4 p-3"/ >
+            {successMessage && <p className="font-bold">Enviado com sucesso! ✅ </p>}
       </form>
       </div>
-
       </section>
     </Fragment>
   );
