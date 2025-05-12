@@ -21,7 +21,7 @@ export default function App() {
 
   const semTela = (e) => {
     e.preventDefault();
-    alert("ESSE PROJETO ESTÀ EM CONSTRUÇÂO, CLIQUE EM 'OK' PARA RECARREGAR A PAGINA");
+    alert("ESSE PROJETO ESTÀ EM CONSTRUÇÂO!");
   }
 
   const handleSubmit = (e) => {
@@ -156,8 +156,8 @@ export default function App() {
   const [text] = useTypewriter({
     words: [
       "Seja Bem-vindo!",
-      "Meu nome é Enrico Mustafa",
-      "Esse é o meu portifolio",
+      "Meu nome é Enrico Brasil",
+      "Esse é o meu portfólio",
     ],
     loop: true,
     typeSpeed: 120,
@@ -175,8 +175,7 @@ export default function App() {
               </span>
             </h1>
             <p className="mt-4 font-serif text-3xl text-justify">
-              Estudante de Sistemas de Informação, com conhecimentos em
-              desenvolvimento web e mobile.
+              Estudante de Sistemas de Informação, com conhecimentos em desenvolvimento web e mobile.
             </p>
 
             <div className="flex items-center justify-center gap-6 mt-10">
@@ -193,7 +192,6 @@ export default function App() {
               <a
                 href="https://github.com/EnricoMustafa"
                 target="_blank"
-                rel="noopener noreferrer"
               >
                 <LiaGithub
                   className="transition-all hover:text-gray-300"
@@ -203,7 +201,6 @@ export default function App() {
               <a
                 href="https://wa.me/5571993483883"
                 target="_blank"
-                rel="noopener noreferrer"
               >
                 <IoLogoWhatsapp
                   className="transition-all hover:text-gray-300"
@@ -211,8 +208,8 @@ export default function App() {
                 />
               </a>
               <a
-                className="text-white transition-all bg-black rounded-md hover:text-gray-500 p-3 hover:bg-gray-300"
-                href="src/public/docs/ENRICO_MUSTAFA_Curriculo.pdf"
+                className="text-white transition-all bg-black rounded-md hover:text-black font-semibold p-3 hover:bg-gray-300"
+                href="src/public/docs/CurriculoEnricoBrasil.pdf"
                 download="Meu-Curriculo.pdf"
               >
                 Baixar CV
@@ -233,12 +230,27 @@ export default function App() {
 {/* Tecnologias */}
       <section className="h-screen">
         <h1 className="text-black font-serif pt-12 text-5xl text-center">
-          Tecnologias
+          Conhecimentos Técnicos
         </h1>
         <div className= "flex w-full h-3/5 items-center justify-center gap-3">
           <div className="p-4 rounded-xl shadow-xl w-2/5 border border-gray-400 h-96">
-            <h1 className="text-center text-2xl font-bold mt-2">Clique em uma linguagem e veja meu nivel de experiencia</h1>
-            <div className="flex justify-center flex-wrap mt-4 w-full items-center h-3/4 gap-4">
+            <h1 className="text-center text-2xl font-bold mt-2">Selecione uma linguagem para ver meu nível de experiência.</h1>
+            <div className="flex justify-center flex-wrap mt-4 w-4/6 m-auto items-center h-3/4 gap-8">
+            
+            <FaHtml5  onClick={() => {
+              setColor('bg-green-500'),
+              setProgress('w-3/4'),
+              setTextTec(texto[8]),
+              settitleTec('HTML');
+            }}
+            size={70} color="#000" className="hover:animate-pulse cursor-pointer transition-transform duration-600 hover:scale-110" /> 
+            <FaCss3Alt onClick={() => {
+              setColor('bg-yellow-500'),
+              setProgress('w-2/3'),
+              setTextTec(texto[7]),
+              settitleTec('CSS');
+            }}
+            size={70} color="#000" className="hover:animate-pulse cursor-pointer transition-transform duration-600 hover:scale-110" />  
             <IoLogoJavascript 
             onClick={() => {
               setColor('bg-yellow-500'),
@@ -246,7 +258,21 @@ export default function App() {
               setTextTec(texto[0]),
               settitleTec('Javascript');
             }}
-              size={70} color="#000" className="hover:animate-pulse cursor-pointer transition-transform duration-600 hover:scale-110" />
+            size={70} color="#000" className="hover:animate-pulse cursor-pointer transition-transform duration-600 hover:scale-110" />
+            <FaPython onClick={() => {
+              setColor('bg-red-500'),
+              setProgress('w-1/4'),
+              setTextTec(texto[6]),
+              settitleTec('Python');
+            }}
+            size={70} color="#000" className="hover:animate-pulse cursor-pointer transition-transform duration-600 hover:scale-110" /> 
+                        <FaGitAlt onClick={() => {
+              setColor('bg-yellow-500'),
+              setProgress('w-1/2'),
+              setTextTec(texto[5]),
+              settitleTec('Git');
+            }} 
+            size={70} color="#000" className="hover:animate-pulse cursor-pointer transition-transform duration-600 hover:scale-110" />
             <FaReact 
             onClick={() => {
               setColor('bg-yellow-500'),
@@ -277,34 +303,7 @@ export default function App() {
               settitleTec('Node');
             }} 
             size={70} color="#000" className="hover:animate-pulse cursor-pointer transition-transform duration-600 hover:scale-110" />
-            <FaGitAlt onClick={() => {
-              setColor('bg-yellow-500'),
-              setProgress('w-1/2'),
-              setTextTec(texto[5]),
-              settitleTec('Git');
-            }} 
-            size={70} color="#000" className="hover:animate-pulse cursor-pointer transition-transform duration-600 hover:scale-110" />
-            <FaPython onClick={() => {
-              setColor('bg-red-500'),
-              setProgress('w-1/4'),
-              setTextTec(texto[6]),
-              settitleTec('Python');
-            }}
-            size={70} color="#000" className="hover:animate-pulse cursor-pointer transition-transform duration-600 hover:scale-110" /> 
-            <FaCss3Alt onClick={() => {
-              setColor('bg-yellow-500'),
-              setProgress('w-2/3'),
-              setTextTec(texto[7]),
-              settitleTec('CSS');
-            }}
-            size={70} color="#000" className="hover:animate-pulse cursor-pointer transition-transform duration-600 hover:scale-110" /> 
-            <FaHtml5  onClick={() => {
-              setColor('bg-green-500'),
-              setProgress('w-3/4'),
-              setTextTec(texto[8]),
-              settitleTec('HTML');
-            }}
-            size={70} color="#000" className="hover:animate-pulse cursor-pointer transition-transform duration-600 hover:scale-110" /> 
+  
             <GrMysql onClick={() => {
               setColor('bg-red-500'),
               setProgress('w-1/4'),
@@ -325,7 +324,7 @@ export default function App() {
             <div className="flex-wrap w-full m-auto">
               <div className="bg-white w-96 m-auto shadow-xl rounded-2xl border border-gray-400">
                 <div className={`h-10 ${color} ${progress} transition-all duration-700 ease-in-out  rounded-2xl`}>
-                <p className="text-center font-serif font-semibold p-2">Nivel</p>
+                <p className="text-center font-serif font-semibold p-2">Nível</p>
                 </div>
               </div>
               <div className="text-black flex justify-around w-96 m-auto font-semibold">
@@ -338,7 +337,7 @@ export default function App() {
 
       <section className="h-screen w-full ">
       <h1 className="text-black pt-12 font-serif text-5xl flex justify-center">
-          Projetos
+          Meus projetos
       </h1>
        <div className= "flex h-3/5 items-center mt-4 w-full justify-center gap-3">
           <div className="p-8 rounded-xl shadow-xl w-3/4 border border-gray-400 items-center flex justify-around h-5/6">
@@ -382,7 +381,7 @@ export default function App() {
           </div>
           <div className="flex justify-around mt-3">
             <button className="bg-black text-white p-2 w-20 rounded-lg hover:animate-pulse hover:bg-gray-400 font-semibold "> <a href="" onClick={(e) => {semTela(e)}}>Acessar</a></button>
-            <button className="bg-black text-white p-2 w-20 rounded-lg hover:animate-pulse hover:bg-gray-400 font-semibold"> <a target="_blank" href="https://github.com/EnricoMustafa/VerificadorDeSenha">Github</a></button>
+            <button className="bg-black text-white p-2 w-20 rounded-lg hover:animate-pulse hover:bg-gray-400 font-semibold"> <a  href="" onClick={(e) => {semTela(e)}}>Github</a></button>
           </div>
           </div>
           </div>
@@ -404,6 +403,10 @@ export default function App() {
       </form>
       </div>
       </section>
+
+      <footer className="bg-black text-white flex justify-center p-4 mt-64 ">
+        <p className="p-5">© 2025 Enrico Brasil. Todos os direitos reservados.</p>
+      </footer>
     </Fragment>
   );
 }
