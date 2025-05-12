@@ -14,13 +14,39 @@ import { FaPython } from "react-icons/fa";
 import { FaCss3Alt } from "react-icons/fa";
 import { FaHtml5 } from "react-icons/fa";
 import { GrMysql } from "react-icons/gr";
+import emailjs from '@emailjs/browser';
 
 
 export default function App() {
 
   const semTela = (e) => {
-    e.preventDefault;
+    e.preventDefault();
     alert("ESSE PROJETO ESTÀ EM CONSTRUÇÂO, CLIQUE EM 'OK' PARA RECARREGAR A PAGINA");
+  }
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    if(name === '' || email === '' || message === ''){
+      alert("Preencha todos os campos corretamente");
+      return;
+    }
+
+    const templateParams = {
+      from_name: name,
+      message: message,
+      email: email
+    }
+    emailjs.send("service_tfdd004", "template_6xakmq2", templateParams, "kfVmYLort6SkcIyZc")
+    .then((response) => {
+      console.log("EMAIL ENVIADO", response.status, response.text)
+      console.log(templateParams)
+      setName('')
+      setEmail('')
+      setEmail('')
+    }, (err) => {
+      console.log("Error:", err)
+    })
   }
   const texto = [
   <ul>
@@ -106,10 +132,14 @@ export default function App() {
 
 ]
 
-  const [color, setColor ] = useState('bg-red-500');
-  const [progress, setProgress ] = useState('w-0');
-  const [ textTec, setTextTec ] = useState(texto[0]);
-  const [ titleTec, settitleTec] = useState('Javascript');
+  const [color, setColor] = useState('bg-red-500');
+  const [progress, setProgress] = useState('w-0');
+  const [textTec, setTextTec] = useState(texto[0]);
+  const [titleTec, settitleTec] = useState('Javascript');
+
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [message, setMessage] = useState('');
 
 
 
@@ -349,6 +379,22 @@ export default function App() {
           </div>
           </div>
        </div>
+      </section>
+
+      <section className="h-2/4 w-full">
+
+      <div className="p-4 rounded-xl shadow-xl w-2/5 border m-auto border-gray-400 h-96">
+      <h1 className="text-black  font-serif text-5xl flex justify-center">
+          Contato
+      </h1>
+      <form className="flex items-center justify-center flex-col gap-3 mt-5" onSubmit={sendEmail}>
+            <input className="border rounded-md w-2/4 p-1" type="text" placeholder="Digite seu nome" onChange={(e) => {setName(e.target.value)}} value={name}/>
+            <input className="border rounded-md w-2/4 p-1" type="text" placeholder="Digite seu email" onChange={(e) => {setEmail(e.target.value)}} value={email}/>
+            <textarea className="border rounded-md w-2/4" type="text" placeholder="Digite sua mensagem..." onChange={(e) => {setMessage(e.target.value)}} value={message}/>
+            <input type="submit" className="bg-black rounded-xl text-white w-1/4 p-3"/ >
+      </form>
+      </div>
+
       </section>
     </Fragment>
   );
