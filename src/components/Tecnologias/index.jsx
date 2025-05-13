@@ -99,149 +99,113 @@ export default function Tech() {
   const [titleTec, settitleTec] = useState("Javascript");
 
   return (
-    <section className="h-screen">
-      <h1 className="text-black font-serif pt-12 text-5xl text-center">
-        Conhecimentos Técnicos
+ <section className="h-auto min-h-screen px-4 py-8">
+  <h1 className="text-black font-serif mt-4 mb-6 text-3xl sm:text-4xl md:text-5xl text-center">
+    Conhecimentos Técnicos
+  </h1>
+
+  <div className="flex flex-col lg:flex-row w-full mt-12 items-center justify-center gap-6">
+    {/* Bloco da seleção de tecnologias */}
+    <div className="p-4 rounded-xl shadow-xl w-full lg:w-2/5 border border-gray-400 h-auto lg:h-96">
+      <h1 className="text-center text-xl sm:text-2xl font-bold mt-2">
+        Selecione uma linguagem para ver meu nível de experiência.
       </h1>
-      <div className="flex w-full h-3/5 items-center justify-center gap-3">
-        <div className="p-4 rounded-xl shadow-xl w-2/5 border border-gray-400 h-96">
-          <h1 className="text-center text-2xl font-bold mt-2">
-            Selecione uma linguagem para ver meu nível de experiência.
-          </h1>
-          <div className="flex justify-center flex-wrap mt-4 w-4/6 m-auto items-center h-3/4 gap-8">
-            <FaHtml5
-              onClick={() => {
-                setColor("bg-green-500"),
-                  setProgress("w-3/4"),
-                  setTextTec(texto[8]),
-                  settitleTec("HTML");
-              }}
-              size={70}
-              color="#000"
-              className="hover:animate-pulse cursor-pointer transition-transform duration-600 hover:scale-110"
-            />
-            <FaCss3Alt
-              onClick={() => {
-                setColor("bg-yellow-500"),
-                  setProgress("w-2/3"),
-                  setTextTec(texto[7]),
-                  settitleTec("CSS");
-              }}
-              size={70}
-              color="#000"
-              className="hover:animate-pulse cursor-pointer transition-transform duration-600 hover:scale-110"
-            />
-            <IoLogoJavascript
-              onClick={() => {
-                setColor("bg-yellow-500"),
-                  setProgress("w-2/4"),
-                  setTextTec(texto[0]),
-                  settitleTec("Javascript");
-              }}
-              size={70}
-              color="#000"
-              className="hover:animate-pulse cursor-pointer transition-transform duration-600 hover:scale-110"
-            />
-            <FaPython
-              onClick={() => {
-                setColor("bg-red-500"),
-                  setProgress("w-1/4"),
-                  setTextTec(texto[6]),
-                  settitleTec("Python");
-              }}
-              size={70}
-              color="#000"
-              className="hover:animate-pulse cursor-pointer transition-transform duration-600 hover:scale-110"
-            />
-            <FaGitAlt
-              onClick={() => {
-                setColor("bg-yellow-500"),
-                  setProgress("w-1/2"),
-                  setTextTec(texto[5]),
-                  settitleTec("Git");
-              }}
-              size={70}
-              color="#000"
-              className="hover:animate-pulse cursor-pointer transition-transform duration-600 hover:scale-110"
-            />
-            <FaReact
-              onClick={() => {
-                setColor("bg-yellow-500"),
-                  setProgress("w-1/2"),
-                  setTextTec(texto[1]),
-                  settitleTec("React");
-              }}
-              size={70}
-              color="#000"
-              className="hover:animate-pulse cursor-pointer transition-transform duration-600 hover:scale-110"
-            />
-            <FaJava
-              onClick={() => {
-                setColor("bg-red-500"),
-                  setProgress("w-1/4"),
-                  setTextTec(texto[2]),
-                  settitleTec("Java");
-              }}
-              size={70}
-              color="#000"
-              className="hover:animate-pulse cursor-pointer transition-transform duration-600 hover:scale-110"
-            />
-            <RiTailwindCssFill
-              onClick={() => {
-                setColor("bg-yellow-500"),
-                  setProgress("w-2/4"),
-                  setTextTec(texto[3]),
-                  settitleTec("Tailwind");
-              }}
-              size={70}
-              color="#000"
-              className="hover:animate-pulse cursor-pointer transition-transform duration-600 hover:scale-110"
-            />
-            <FaNode
-              onClick={() => {
-                setColor("bg-red-500"),
-                  setProgress("w-1/4"),
-                  setTextTec(texto[4]),
-                  settitleTec("Node");
-              }}
-              size={70}
-              color="#000"
-              className="hover:animate-pulse cursor-pointer transition-transform duration-600 hover:scale-110"
-            />
+      <div className="flex justify-center flex-wrap mt-10 w-full sm:w-4/5 m-auto items-center h-auto gap-6">
+        {/* Ícones */}
+        <FaHtml5 onClick={() => {
+          setColor("bg-green-500"),
+          setProgress("w-3/4"),
+          setTextTec(texto[8]),
+          settitleTec("HTML");
+        }} size={60} color="#000" className="hover:animate-pulse cursor-pointer transition-transform duration-600 hover:scale-110" />
 
-            <GrMysql
-              onClick={() => {
-                setColor("bg-red-500"),
-                  setProgress("w-1/4"),
-                  setTextTec(texto[9]),
-                  settitleTec("MySql");
-              }}
-              size={70}
-              color="#000"
-              className="hover:animate-pulse cursor-pointer transition-transform duration-600 hover:scale-110"
-            />
-          </div>
-        </div>
+        <FaCss3Alt onClick={() => {
+          setColor("bg-yellow-500"),
+          setProgress("w-2/3"),
+          setTextTec(texto[7]),
+          settitleTec("CSS");
+        }} size={60} color="#000" className="hover:animate-pulse cursor-pointer transition-transform duration-600 hover:scale-110" />
 
-        <div className="p-4 rounded-xl shadow-xl w-96 h-96 text-xl border border-gray-400">
-          <h1 className="text-center text-2xl font-bold">{titleTec}</h1>
-          <h1 className="mt-4">{textTec}</h1>
-        </div>
+        <IoLogoJavascript onClick={() => {
+          setColor("bg-yellow-500"),
+          setProgress("w-2/4"),
+          setTextTec(texto[0]),
+          settitleTec("Javascript");
+        }} size={60} color="#000" className="hover:animate-pulse cursor-pointer transition-transform duration-600 hover:scale-110" />
+
+        <FaPython onClick={() => {
+          setColor("bg-red-500"),
+          setProgress("w-1/4"),
+          setTextTec(texto[6]),
+          settitleTec("Python");
+        }} size={60} color="#000" className="hover:animate-pulse cursor-pointer transition-transform duration-600 hover:scale-110" />
+
+        <FaGitAlt onClick={() => {
+          setColor("bg-yellow-500"),
+          setProgress("w-1/2"),
+          setTextTec(texto[5]),
+          settitleTec("Git");
+        }} size={60} color="#000" className="hover:animate-pulse cursor-pointer transition-transform duration-600 hover:scale-110" />
+
+        <FaReact onClick={() => {
+          setColor("bg-yellow-500"),
+          setProgress("w-1/2"),
+          setTextTec(texto[1]),
+          settitleTec("React");
+        }} size={60} color="#000" className="hover:animate-pulse cursor-pointer transition-transform duration-600 hover:scale-110" />
+
+        <FaJava onClick={() => {
+          setColor("bg-red-500"),
+          setProgress("w-1/4"),
+          setTextTec(texto[2]),
+          settitleTec("Java");
+        }} size={60} color="#000" className="hover:animate-pulse cursor-pointer transition-transform duration-600 hover:scale-110" />
+
+        <RiTailwindCssFill onClick={() => {
+          setColor("bg-yellow-500"),
+          setProgress("w-2/4"),
+          setTextTec(texto[3]),
+          settitleTec("Tailwind");
+        }} size={60} color="#000" className="hover:animate-pulse cursor-pointer transition-transform duration-600 hover:scale-110" />
+
+        <FaNode onClick={() => {
+          setColor("bg-red-500"),
+          setProgress("w-1/4"),
+          setTextTec(texto[4]),
+          settitleTec("Node");
+        }} size={60} color="#000" className="hover:animate-pulse cursor-pointer transition-transform duration-600 hover:scale-110" />
+
+        <GrMysql onClick={() => {
+          setColor("bg-red-500"),
+          setProgress("w-1/4"),
+          setTextTec(texto[9]),
+          settitleTec("MySql");
+        }} size={60} color="#000" className="hover:animate-pulse cursor-pointer transition-transform duration-600 hover:scale-110" />
       </div>
-      <div className="flex-wrap w-full m-auto">
-        <div className="bg-white w-96 m-auto shadow-xl rounded-2xl border border-gray-400">
-          <div
-            className={`h-10 ${color} ${progress} transition-all duration-700 ease-in-out  rounded-2xl`}
-          >
-            <p className="text-center font-serif font-semibold p-2">Nível</p>
-          </div>
-        </div>
-        <div className="text-black flex justify-around w-96 m-auto font-semibold">
-          <p>Basico</p>
-          <p>Intermediario</p>
-          <p>Avançado</p>
-        </div>
+    </div>
+
+    {/* Bloco de descrição da tecnologia */}
+    <div className="p-4 rounded-xl shadow-xl w-full lg:w-96 h-auto text-base sm:text-lg border border-gray-400">
+      <h1 className="text-center text-xl sm:text-2xl font-bold">{titleTec}</h1>
+      <h1 className="mt-4">{textTec}</h1>
+    </div>
+  </div>
+
+  {/* Barra de progresso */}
+  <div className="flex flex-col items-center mt-6 w-full px-4">
+    <div className="bg-white w-full sm:w-96 shadow-xl rounded-2xl border border-gray-400">
+      <div
+        className={`h-10 ${color} ${progress} transition-all duration-700 ease-in-out rounded-2xl`}
+      >
+        <p className="text-center font-serif font-semibold p-2">Nível</p>
       </div>
-    </section>
+    </div>
+    <div className="text-black flex justify-between w-full sm:w-96 mt-2 font-semibold">
+      <p>Basico</p>
+      <p>Intermediario</p>
+      <p>Avançado</p>
+    </div>
+  </div>
+</section>
   );
 }
