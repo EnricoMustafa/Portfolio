@@ -121,7 +121,7 @@ export default function App() {
     {/* Imagem de perfil */}
     <div className="w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80 lg:w-96 lg:h-96 ">
       <img
-        src="public/perfil.jpg"
+        src="perfil.jpg"
         alt="Foto de perfil"
         className="object-cover rounded-full w-full h-full bg-white border"
       />
@@ -251,7 +251,7 @@ export default function App() {
 
       <footer className="bg-black text-white font-title flex justify-center p-4 mt-44 ">
         <p className="p-5 flex gap-3">
-          © Desenvolvido por<p className="font-bold">Enrico Brasil</p> 
+          © Desenvolvido por Enrico Brasil
         </p>
       </footer>
     </Fragment>
