@@ -100,14 +100,14 @@ export default function Tech() {
 
   return (
  <section className="h-auto min-h-screen px-4 py-8">
-  <h1 className="text-black font-serif mt-4 mb-6 text-3xl sm:text-4xl md:text-5xl text-center">
+  <h1 className="text-black font-title font-semibold mt-4 mb-6 text-3xl sm:text-4xl md:text-5xl text-center">
     Conhecimentos Técnicos
   </h1>
 
   <div className="flex flex-col lg:flex-row w-full mt-12 items-center justify-center gap-6">
     {/* Bloco da seleção de tecnologias */}
     <div className="p-4 rounded-xl shadow-xl w-full lg:w-2/5 border border-gray-400 h-auto lg:h-96">
-      <h1 className="text-center text-xl sm:text-2xl font-bold mt-2">
+      <h1 className="text-center text-xl sm:text-2xl font-title mt-2">
         Selecione uma linguagem para ver meu nível de experiência.
       </h1>
       <div className="flex justify-center flex-wrap mt-10 w-full sm:w-4/5 m-auto items-center h-auto gap-6">
@@ -186,8 +186,8 @@ export default function Tech() {
 
     {/* Bloco de descrição da tecnologia */}
     <div className="p-4 rounded-xl shadow-xl w-full lg:w-96 h-auto text-base sm:text-lg border border-gray-400">
-      <h1 className="text-center text-xl sm:text-2xl font-bold">{titleTec}</h1>
-      <h1 className="mt-4">{textTec}</h1>
+      <h1 className="text-center text-xl sm:text-2xl font-title font-semibold">{titleTec}</h1>
+      <h1 className="mt-4 font-title font-extralight">{textTec}</h1>
     </div>
   </div>
 
@@ -197,10 +197,10 @@ export default function Tech() {
       <div
         className={`h-10 ${color} ${progress} transition-all duration-700 ease-in-out rounded-2xl`}
       >
-        <p className="text-center font-serif font-semibold p-2">Nível</p>
+        <p className="text-center font-title font-semibold p-2">Nível</p>
       </div>
     </div>
-    <div className="text-black flex justify-between w-full sm:w-96 mt-2 font-semibold">
+    <div className="text-black flex justify-between w-full sm:w-96 mt-2 font-title font-semibold">
       <p>Basico</p>
       <p>Intermediario</p>
       <p>Avançado</p>

@@ -9,6 +9,9 @@ export default {
       colors: {
         customBg: '#e6e6e4',
       },
+      fontFamily:{
+        title:["Fira Code", "monospace"]
+      },
     },
   },
   plugins: [],
