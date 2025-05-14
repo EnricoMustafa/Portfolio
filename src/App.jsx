@@ -121,7 +121,7 @@ export default function App() {
     {/* Imagem de perfil */}
     <div className="w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80 lg:w-96 lg:h-96 ">
       <img
-        src="src/assets/perfil.jpg"
+        src="src/public/assets/perfil.jpg"
         alt="Foto de perfil"
         className="object-cover rounded-full w-full h-full bg-white border"
       />
@@ -142,7 +142,7 @@ export default function App() {
       </h1>
       <div className="w-full h-48 sm:h-52 bg-black rounded-t-xl mt-2 border border-gray-400">
         <img
-          src="src/assets/VerificadorSenha.jpg"
+          src="src/public/assets/VerificadorSenha.jpg"
           className="object-cover rounded-t-xl w-full h-full"
           alt="Verificador de senha"
         />
