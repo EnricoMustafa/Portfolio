@@ -110,7 +110,7 @@ export default function App() {
         </a>
         <a
           className="text-white font-title font-semibold transition-all bg-black rounded-md hover:text-black  p-3 hover:bg-gray-300"
-          href="src/public/docs/CurriculoEnricoBrasil.pdf"
+          href="public/CurriculoEnricoBrasil.pdf"
           download="Meu-Curriculo.pdf"
         >
           Baixar CV
@@ -121,7 +121,7 @@ export default function App() {
     {/* Imagem de perfil */}
     <div className="w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80 lg:w-96 lg:h-96 ">
       <img
-        src="src/public/assets/perfil.jpg"
+        src="public/perfil.jpg"
         alt="Foto de perfil"
         className="object-cover rounded-full w-full h-full bg-white border"
       />
@@ -142,7 +142,7 @@ export default function App() {
       </h1>
       <div className="w-full h-48 sm:h-52 bg-black rounded-t-xl mt-2 border border-gray-400">
         <img
-          src="src/public/assets/VerificadorSenha.jpg"
+          src="public/VerificadorSenha.jpg"
           className="object-cover rounded-t-xl w-full h-full"
           alt="Verificador de senha"
         />
@@ -188,15 +188,15 @@ export default function App() {
       <div className="flex justify-around mt-3 w-full">
         <a
           target="_blank"
-          href="https://enricomustafa.github.io/VerificadorDeSenha/"
-          className="bg-black text-white p-2 w-24 rounded-lg hover:animate-pulse hover:bg-gray-400 font-title font-semibold text-center"
+          onClick={(e) => semTela(e)}
+          className="bg-black text-white p-2 w-24 rounded-lg hover:animate-pulse hover:bg-gray-400 font-title font-semibold text-center cursor-pointer"
         >
           Acessar
         </a>
         <a
           target="_blank"
-          href="https://github.com/EnricoMustafa/VerificadorDeSenha"
-          className="bg-black text-white p-2 w-24 rounded-lg hover:animate-pulse hover:bg-gray-400 font-title font-semibold text-center"
+          onClick={(e) => semTela(e)}
+          className="bg-black text-white p-2 w-24 rounded-lg hover:animate-pulse hover:bg-gray-400 font-title font-semibold text-center cursor-pointer"
         >
           Github
         </a>
